@@ -1,0 +1,167 @@
+
+<included> 	
+	<property name="dailyFile" value="C:/AmlConfig/logs/daily" />
+
+	<appender name="rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${dailyFile}/AmlCheck.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<charset>UTF-8</charset>
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} -[%F:%L] %msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${dailyFile}/archived/AmlCheck.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>50MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<appender name="webservice_rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${dailyFile}/AmlCheck_webservice.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} -[%F:%L] %msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${dailyFile}/archived/AmlCheck_webservice.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<appender name="mq_rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${dailyFile}/AmlCheck_mq.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} -[%F:%L] %msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${dailyFile}/archived/AmlCheck_mq.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<appender name="tradeFinance_rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${dailyFile}/AmlCheck_tradeFinance.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} -[%F:%L] %msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${dailyFile}/archived/AmlCheck_tradeFinance.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<appender name="amlCheck_rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${dailyFile}/AmlCheck_amlCheck.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} -[%F:%L] %msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${dailyFile}/archived/AmlCheck_amlCheck.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	
+	<appender name="amlController_rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${dailyFile}/AmlCheck_amlController.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} -[%F:%L] %msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${dailyFile}/archived/AmlCheck_amlController.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	<appender name="amlOnlineNameCheck_rolling" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${dailyFile}/AmlCheck_OnlineNameCheck.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>
+				%d{yyyy-MM-dd HH:mm:ss} -[%F:%L] %msg%n
+			</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${dailyFile}/archived/AmlCheck_OnlineNameCheck.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>50MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>	
+	<logger name="com.sas" level="INFO" additivity="false">
+		<!--<appender-ref ref="CONSOLE" />-->
+		<appender-ref ref="rolling" />
+	</logger>
+	<logger name="com.sas.webservice" level="INFO" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="webservice_rolling" />
+	</logger>
+	
+	<logger name="com.sas.mq" level="INFO" additivity="false">
+		<!--<appender-ref ref="CONSOLE" />-->
+		<appender-ref ref="mq_rolling" />
+	</logger>
+	
+	<logger name="com.sas.tradeFinance" level="INFO" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="tradeFinance_rolling" />
+	</logger>
+	
+	<logger name="com.sas.amlCheck" level="INFO" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="amlCheck_rolling" />
+	</logger>
+	
+	<logger name="com.sas.amlCheck.controller" level="INFO" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="amlController_rolling" />
+	</logger>
+	
+	<logger name="org.hibernate" level="ERROR" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="rolling" />
+	</logger>
+	<logger name="org.springframework" level="ERROR" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="rolling" />
+	</logger>
+	<logger name="com.sas.amlCheck.service.AmlNameCheckService" level="ERROR" additivity="true">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="amlOnlineNameCheck_rolling" />
+	</logger>
+	<root level="INFO">
+		<appender-ref ref="rolling" />
+	</root>
+</included> 

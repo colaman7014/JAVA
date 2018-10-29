@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+	<include file="D:/SAS/Config/Lev1/Web/WebAppServer/SASServer99_1/AmlConfig/logback-aml.xml"/>
+	<!--<include file="C:/AmlConfig/logback-aml.xml"/>-->
+</configuration>
