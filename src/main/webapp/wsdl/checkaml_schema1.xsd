@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kgiaml/" targetNamespace="http://kgiaml/" version="1.0">
+<xs:element name="checkAML" type="tns:checkAML"/>
+<xs:element name="checkAMLResponse" type="tns:checkAMLResponse"/>
+<xs:complexType name="checkAML">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:checkAMLBean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="checkAMLBean">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="checkEntities" nillable="true" type="tns:checkEntitiesBean"/>
+      <xs:element minOccurs="0" name="check_dept" type="xs:string"/>
+      <xs:element minOccurs="0" name="check_type" type="xs:string"/>
+      <xs:element minOccurs="0" name="system_type" type="xs:string"/>
+      <xs:element minOccurs="0" name="unique_key" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="checkEntitiesBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ch_name" type="xs:string"/>
+      <xs:element minOccurs="0" name="country" type="xs:string"/>
+      <xs:element minOccurs="0" name="en_name" type="xs:string"/>
+      <xs:element minOccurs="0" name="entity_type" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="seq" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="checkAMLResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:outputBean"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="outputBean">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aml_result" type="xs:string"/>
+      <xs:element minOccurs="0" name="category_desc" type="xs:string"/>
+      <xs:element minOccurs="0" name="dob" type="xs:string"/>
+      <xs:element minOccurs="0" name="error_code" type="xs:string"/>
+      <xs:element minOccurs="0" name="error_message" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="invest_comment" type="xs:string"/>
+      <xs:element minOccurs="0" name="invest_result" type="xs:string"/>
+      <xs:element minOccurs="0" name="list_type" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="nationality" type="xs:string"/>
+      <xs:element minOccurs="0" name="original_source" type="xs:string"/>
+      <xs:element minOccurs="0" name="passport" type="xs:string"/>
+      <xs:element minOccurs="0" name="seq" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

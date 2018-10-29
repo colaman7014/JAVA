@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CheckAMLService" targetNamespace="http://kgiaml/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://kgiaml/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://kgiaml/" schemaLocation="checkaml_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="checkAMLResponse">
+    <wsdl:part name="parameters" element="tns:checkAMLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkAML">
+    <wsdl:part name="parameters" element="tns:checkAML">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CheckAML">
+    <wsdl:operation name="checkAML">
+      <wsdl:input name="checkAML" message="tns:checkAML">
+    </wsdl:input>
+      <wsdl:output name="checkAMLResponse" message="tns:checkAMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CheckAMLServiceSoapBinding" type="tns:CheckAML">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkAML">
+      <soap:operation soapAction="urn:CheckAML" style="document"/>
+      <wsdl:input name="checkAML">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkAMLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CheckAMLService">
+    <wsdl:port name="CheckAMLPort" binding="tns:CheckAMLServiceSoapBinding">
+      <soap:address location="http://amlwebt1.kgibank.com/CheckAML/services/CheckAMLPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
